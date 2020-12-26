@@ -273,6 +273,28 @@
        cout << "A vector of 2D Points = " << vPoints << endl << endl;
        ```
 
+## 杂项待归类
+
+### DMatch理解
+  1. queryIdx：匹配点1在查询图中的索引
+  2. trainIdx：匹配点2在训练图中的索引
+  3. imgIdx：图像索引
+  4. distance：匹配点1、2之间的距离
+  
+### DescriptorMatcher::match理解
+  函数原型：
+  
+  ```c++
+  void cv::DescriptorMatcher::match(
+        InputArray queryDescriptors, 
+        InputArray  	trainDescriptors,
+        std::vector< DMatch > &  	matches,
+		    InputArray  	mask = noArray() 
+	) 		const
+  ```
+  
+  在使用的时候需要先创建一个vector<DMatch>的matches
+
 ## C++便捷操作
 
 ### 字符串处理
