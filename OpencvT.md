@@ -175,6 +175,14 @@
      - matrix size is constant
   2. a pointer to the matrix containing the pixel value
      - 系统会自动为真正的pixel value矩阵分配存储空间，但是Mat本身并不一定会跟真实数据放在一起
+     
+- Mat的属性及理解
+
+  1. flags：多种属性编码成的一个32bits值，包括存储是否连续、数据类型、channels等等
+  2. data：是一个指针，指向数据真正存放的地址
+  3. datastart、dataend：是一个指针，指向的是当前数据的启示地址、结束地址，注意和上面的data不同，比如在对图像进行取ROI的时候，他们的data是一样的，都用的是同一块数据，但是他们靠datastart和dataend来区分
+  4. size：是一个结构体指针，指向一个说明图像数据属性的结构体
+  
 
 - Mat类使用reference counting system 解决图像数据拷贝的问题
 
